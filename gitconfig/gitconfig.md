@@ -190,7 +190,7 @@ interfere with tab completion
 Now on to the *special* functions that are pretty awesome:
 
 #### git lg
-![Example output](TODO)
+![Example output](git-lg-small.png)
 
 Use like `git log` except that this actually is helping you understand
 history of a repository. If you intend to share the output, you may want
@@ -202,6 +202,10 @@ to consider using the color-stripped version `git lp` instead.
 ```
 Inspired by [1] (http://www.jukie.net/bart/blog/pimping-out-git-log)
 and [2] (http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/).
+
+The example output above is related to [Flare], which you really should
+check out when you have some spare time! A larger `git lg` sample
+output of the same repository can be found [here](git-lg-large.png).
 
 #### git sed
 Usage: `git sed 's@foo@bar@g' horizons/gui/`
@@ -239,6 +243,7 @@ Instead of cloning lots of repositories like
 ```
 
 [DCSS]: https://crawl.develz.org
+[Flare]: http://flarerpg.org
 [Unknown Horizons]: http://www.unknown-horizons.org
 [Jenkins]: http://jenkins-ci.org
 [sqlite3dump]: https://github.com/unknown-horizons/unknown-horizons/blob/master/development/sqlite3dump

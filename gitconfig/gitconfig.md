@@ -214,6 +214,23 @@ Usage: `git sed 's@foo@bar@g' horizons/gui/`
 ```
 Inspired by stackoverflow.
 
+#### git pr
+A somewhat external alias to manage pull requests from the command line.
+Adding `hub` to `git` results in `git + hub = github`, and the pull request
+part is especially nice because it allows you to attach pull requests to
+existing issues, which to my knowledge is not possible through their website.
+
+An example attaching the current branch of your current repository to issue
+`#27` could look like this:
+  `git pr -i 27`.
+Add `-b NotMe:master` if you are not an owner of the remote repository,
+but `NotMe` is and granted you push access.
+```bash
+	pr = ! hub pull-request
+```
+More about [hub] here. As always, make sure to not overdo this --
+converting issues to pull requests cannot be undone!
+
 This concludes the rather huge section on aliases. But, of course, why
 stop here if we can have yet another kind of cool alias functionality?
 
@@ -246,4 +263,5 @@ Instead of cloning lots of repositories like
 [Flare]: http://flarerpg.org
 [Unknown Horizons]: http://www.unknown-horizons.org
 [Jenkins]: http://jenkins-ci.org
+[hub]: http://defunkt.io/hub/hub.1.html
 [sqlite3dump]: https://github.com/unknown-horizons/unknown-horizons/blob/master/development/sqlite3dump

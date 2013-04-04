@@ -210,7 +210,7 @@ output of the same repository can be found [here](git-lg-large.png).
 #### git sed
 Usage: `git sed 's@foo@bar@g' horizons/gui/`
 ```bash
-	sed = ! "f() { git grep -I --null --full-name --name-only . $2 | xargs -0 sed -i -e $1; }; f"
+	sed = ! "f() { git grep -I --null --full-name --name-only . \"$2\" | xargs -0 sed -i -e \"$1\"; }; f"
 ```
 Inspired by stackoverflow.
 

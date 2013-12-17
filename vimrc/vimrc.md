@@ -31,8 +31,8 @@ highlight SpellBad term=reverse ctermbg=1
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-" Allows normal jk movement on long lines.
 
+" Allows normal jk movement on long lines.
 nnoremap j gj
 nnoremap k gk
 nnoremap <Up> g<Up>
@@ -71,6 +71,9 @@ snippet manages to prevent. Yeah, i'm one of those whitespace guys.
 ```viml
 set smartindent
 
+" When scrolling up or down, pad by this many lines.
+set scrolloff=2
+
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
@@ -87,6 +90,7 @@ here is a short (and incomplete) list of how my indentation settings vary betwee
 Includes the rather unconventional tabwidth of 5 which turned out to work better for me than 4.
 Of course when working on space-only projects I keep the de-facto standard tab width at four.
 ```viml
+autocmd BufNewFile,BufRead *.des              set syntax=levdes textwidth=80
 autocmd BufNewFile,BufRead *.xml              set ts=5  sts=5  sw=5  textwidth=160  smarttab  noexpandtab
 autocmd BufNewFile,BufRead *.py               set ts=5  sts=5  sw=5  textwidth=90   smarttab  noexpandtab
 autocmd BufNewFile,BufRead ~/UH/*.py*         set ts=5  sts=5  sw=5  textwidth=100  smarttab  noexpandtab
@@ -114,19 +118,6 @@ nnoremap <silent> q : TaskList<CR>
 " For my keyboard, just make those be the same huge Insert key
 map! <F12> <Insert>
 
-" toggle mbe modes: open&focus <> close
-map <Leader>b :TMiniBufExplorer<cr>
-" force update
-map <Leader>u :UMiniBufExplorer<cr>
-
-" MiniBufExplorer settings
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplShowBufNumbers = 0
-let g:miniBufExplForceSyntaxEnable = 1
-
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
@@ -136,14 +127,6 @@ autocmd BufReadPost *
 	\ if line("'\"") > 1 && line("'\"") <= line("$") |
 	\	 exe "normal! g`\"" |
 	\ endif
-
-" Convenient command to see the difference between the current buffer and the
-" file it was loaded from, thus the changes you made.
-" Only define it when not defined already.
-if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
-endif
 
 set clipboard+=unnamed  " yank and copy to X clipboard
 

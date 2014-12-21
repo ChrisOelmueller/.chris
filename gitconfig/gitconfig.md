@@ -19,18 +19,18 @@ TODO
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 ```
 
-Inline Diff
+Diff Highlight
 -----------
-Admittedly the name of this is, like, *really* confusing and *totally*
-misleading. I scraped it off the internets a while ago and never thought
-about its name much afterwards, but come to reconsider now.
+I scraped [this useful script](https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight) off the internets a while ago - by now it's maintained in git mainline.
+Basically it helps you a great deal at spotting the changes in any diff output, be it from `git show`, `git diff` or friends.
 Anyways, what it does is awesome and best explained by a picture I have
 yet to create and upload. TODO!
 ```bash
 [pager]
-	diff = ~/.git/inline-diff.pl | less
-	show = ~/.git/inline-diff.pl | less
+	diff = ~/.git/diff-highlight.pl | less
+	show = ~/.git/diff-highlight.pl | less
 ```
+Learn more at [git/contrib/diff-highlight] (https://github.com/git/git/tree/master/contrib/diff-highlight)!
 
 Push
 ----
